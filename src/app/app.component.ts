@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CountryInfo } from 'src/core/models/country-info.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'world-map';
+  countryInfo: any;
+
+  constructor(){
+    this.countryInfo = {};
+  }
+
+  onPopulateCountryForm(newCountryInfo: CountryInfo){
+    this.countryInfo = newCountryInfo;
+  }
 }
